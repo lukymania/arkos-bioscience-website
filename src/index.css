@@ -4,72 +4,66 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    /* Arkos Bioscience Brand Colors - Crystalline Blue Palette */
+    --arkos-abyss: 210 100% 27%;
+    --arkos-deep: 201 100% 36%;
+    --arkos-cyan: 193 100% 42%;
+    --arkos-light: 189 85% 75%;
+    --arkos-mist: 187 81% 88%;
+    --arkos-sand: 27 42% 88%;
+    --arkos-charcoal: 210 7% 22%;
+    --arkos-white: 0 0% 100%;
+
+    --background: 30 33% 97%;
+    --foreground: 210 7% 22%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 210 7% 22%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --popover-foreground: 210 7% 22%;
+    --primary: 193 100% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 187 81% 88%;
+    --secondary-foreground: 210 100% 27%;
+    --muted: 27 42% 88%;
+    --muted-foreground: 210 7% 40%;
+    --accent: 201 100% 36%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.625rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 189 50% 85%;
+    --input: 189 50% 90%;
+    --ring: 193 100% 42%;
+    --radius: 0.5rem;
   }
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
   }
-  body {
-    @apply bg-background text-foreground;
+  .font-body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
+  .text-arkos-abyss { color: hsl(210 100% 27%); }
+  .text-arkos-deep { color: hsl(201 100% 36%); }
+  .text-arkos-cyan { color: hsl(193 100% 42%); }
+  .text-arkos-light { color: hsl(189 85% 75%); }
+  .text-arkos-charcoal { color: hsl(210 7% 22%); }
+  .bg-arkos-abyss { background-color: hsl(210 100% 27%); }
+  .bg-arkos-deep { background-color: hsl(201 100% 36%); }
+  .bg-arkos-cyan { background-color: hsl(193 100% 42%); }
+  .bg-arkos-light { background-color: hsl(189 85% 75%); }
+  .bg-arkos-mist { background-color: hsl(187 81% 88%); }
+  .bg-arkos-sand { background-color: hsl(27 42% 88%); }
+  .border-arkos-cyan { border-color: hsl(193 100% 42%); }
+  .border-arkos-light { border-color: hsl(189 85% 75%); }
 }
