@@ -1,29 +1,28 @@
-import { Header } from './sections/Header';
-import { VideoHero } from './sections/VideoHero';
-import { TrustBar } from './sections/TrustBar';
-import { ScienceExplained } from './sections/ScienceExplained';
-import { Stats } from './sections/Stats';
-import { Process } from './sections/Process';
-import { Products } from './sections/Products';
-import { PetSection } from './sections/PetSection';
-import { Testimonials } from './sections/Testimonials';
-import { Newsletter } from './sections/Newsletter';
-import { Footer } from './sections/Footer';
+import { Routes, Route } from 'react-router-dom';
+import { useScrollToTop } from './hooks/useScrollToTop';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { HomePage } from './pages/HomePage';
+import { SciencePage } from './pages/SciencePage';
+import { ShopPage } from './pages/ShopPage';
+import { ProductPage } from './pages/ProductPage';
+import { AboutPage } from './pages/AboutPage';
+import { ContactPage } from './pages/ContactPage';
 
 function App() {
+  useScrollToTop();
   return (
     <div className="min-h-screen bg-[hsl(30,33%,97%)] font-body">
       <Header />
       <main>
-        <VideoHero />
-        <TrustBar />
-        <ScienceExplained />
-        <Stats />
-        <Process />
-        <Products />
-        <PetSection />
-        <Testimonials />
-        <Newsletter />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/science" element={<SciencePage />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/product/:slug" element={<ProductPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>
