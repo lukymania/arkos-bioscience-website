@@ -7,20 +7,12 @@ export function Newsletter() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setEmail('');
-    }
+    if (email) { setSubmitted(true); setEmail(''); }
   };
 
   return (
     <section className="py-20 lg:py-24 bg-gradient-to-br from-arkos-abyss via-arkos-deep to-arkos-abyss relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-[0.06]" style={{
-        backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-        backgroundSize: '28px 28px',
-      }} />
-
+      <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
       <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <Mail className="w-10 h-10 text-arkos-light mx-auto mb-5" />
         <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-3">
@@ -32,20 +24,9 @@ export function Newsletter() {
 
         {!submitted ? (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="flex-1 font-body text-sm bg-white/10 border border-white/20 rounded-full px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-arkos-cyan/50 focus:border-transparent"
-              required
-            />
-            <button
-              type="submit"
-              className="group inline-flex items-center justify-center gap-2 font-body font-semibold bg-arkos-cyan hover:bg-white text-white hover:text-arkos-deep px-6 py-3 rounded-full transition-all duration-300"
-            >
-              Subscribe
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="flex-1 font-body text-sm bg-white/10 border border-white/20 rounded-full px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-arkos-cyan/50" required />
+            <button type="submit" className="group inline-flex items-center justify-center gap-2 font-body font-semibold bg-arkos-cyan hover:bg-white text-white hover:text-arkos-deep px-6 py-3 rounded-full transition-all duration-300">
+              Subscribe <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </form>
         ) : (
@@ -54,10 +35,7 @@ export function Newsletter() {
             <span className="font-body text-sm font-medium">Welcome to the community! Check your inbox.</span>
           </div>
         )}
-
-        <p className="font-body text-xs text-white/40 mt-4">
-          No spam. Unsubscribe anytime.
-        </p>
+        <p className="font-body text-xs text-white/40 mt-4">No spam. Unsubscribe anytime.</p>
       </div>
     </section>
   );

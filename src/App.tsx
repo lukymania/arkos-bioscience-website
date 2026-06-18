@@ -1,10 +1,11 @@
 import { Header } from './sections/Header';
-import { Hero } from './sections/Hero';
+import { VideoHero } from './sections/VideoHero';
 import { TrustBar } from './sections/TrustBar';
-import { Science } from './sections/Science';
+import { ScienceExplained } from './sections/ScienceExplained';
 import { Stats } from './sections/Stats';
-import { Products } from './sections/Products';
 import { Process } from './sections/Process';
+import { Products } from './sections/Products';
+import { PetSection } from './sections/PetSection';
 import { Testimonials } from './sections/Testimonials';
 import { Newsletter } from './sections/Newsletter';
 import { Footer } from './sections/Footer';
@@ -14,12 +15,13 @@ function App() {
     <div className="min-h-screen bg-[hsl(30,33%,97%)] font-body">
       <Header />
       <main>
-        <Hero />
+        <VideoHero />
         <TrustBar />
-        <Science />
+        <ScienceExplained />
         <Stats />
-        <Products />
         <Process />
+        <Products />
+        <PetSection />
         <Testimonials />
         <Newsletter />
       </main>

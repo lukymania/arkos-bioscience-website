@@ -4,15 +4,13 @@
 
 @layer base {
   :root {
-    /* Arkos Bioscience Brand Colors - Crystalline Blue Palette */
-    --arkos-abyss: 210 100% 27%;
-    --arkos-deep: 201 100% 36%;
-    --arkos-cyan: 193 100% 42%;
-    --arkos-light: 189 85% 75%;
-    --arkos-mist: 187 81% 88%;
-    --arkos-sand: 27 42% 88%;
-    --arkos-charcoal: 210 7% 22%;
-    --arkos-white: 0 0% 100%;
+    --arkos-abyss: #023E8A;
+    --arkos-deep: #0077B6;
+    --arkos-cyan: #00B4D8;
+    --arkos-light: #90E0EF;
+    --arkos-mist: #CAF0F8;
+    --arkos-sand: #EDE0D4;
+    --arkos-charcoal: #343A40;
 
     --background: 30 33% 97%;
     --foreground: 210 7% 22%;
@@ -39,6 +37,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -47,23 +46,27 @@
 }
 
 @layer utilities {
-  .font-display {
-    font-family: 'Playfair Display', Georgia, serif;
+  .font-display { font-family: 'Playfair Display', Georgia, serif; }
+  .font-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+  .text-arkos-abyss { color: #023E8A; }
+  .text-arkos-deep { color: #0077B6; }
+  .text-arkos-cyan { color: #00B4D8; }
+  .text-arkos-light { color: #90E0EF; }
+  .text-arkos-charcoal { color: #343A40; }
+  .bg-arkos-abyss { background-color: #023E8A; }
+  .bg-arkos-deep { background-color: #0077B6; }
+  .bg-arkos-cyan { background-color: #00B4D8; }
+  .bg-arkos-light { background-color: #90E0EF; }
+  .bg-arkos-mist { background-color: #CAF0F8; }
+  .bg-arkos-sand { background-color: #EDE0D4; }
+  .border-arkos-cyan { border-color: #00B4D8; }
+  .border-arkos-light { border-color: #90E0EF; }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 rounded-2xl;
   }
-  .font-body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+  .section-padding {
+    @apply py-20 lg:py-28;
   }
-  .text-arkos-abyss { color: hsl(210 100% 27%); }
-  .text-arkos-deep { color: hsl(201 100% 36%); }
-  .text-arkos-cyan { color: hsl(193 100% 42%); }
-  .text-arkos-light { color: hsl(189 85% 75%); }
-  .text-arkos-charcoal { color: hsl(210 7% 22%); }
-  .bg-arkos-abyss { background-color: hsl(210 100% 27%); }
-  .bg-arkos-deep { background-color: hsl(201 100% 36%); }
-  .bg-arkos-cyan { background-color: hsl(193 100% 42%); }
-  .bg-arkos-light { background-color: hsl(189 85% 75%); }
-  .bg-arkos-mist { background-color: hsl(187 81% 88%); }
-  .bg-arkos-sand { background-color: hsl(27 42% 88%); }
-  .border-arkos-cyan { border-color: hsl(193 100% 42%); }
-  .border-arkos-light { border-color: hsl(189 85% 75%); }
 }

@@ -1,54 +1,54 @@
 import { useEffect, useRef, useState } from 'react';
-import { Star } from 'lucide-react';
+import { Star, ShoppingCart } from 'lucide-react';
 
 const products = [
   {
     name: 'NanoCBD Tincture',
     strength: '600mg',
     price: '$65',
+    image: '/images/product-tincture.jpg',
     tag: 'Best Seller',
-    color: 'from-arkos-cyan/10 to-arkos-light/10',
-    borderColor: 'border-arkos-cyan/20',
+    desc: 'Daily wellness support with maximum absorption.',
   },
   {
-    name: 'High Potency Tincture',
+    name: 'NanoCBD Tincture',
     strength: '1200mg',
     price: '$125',
-    tag: 'Maximum Strength',
-    color: 'from-arkos-deep/10 to-arkos-cyan/10',
-    borderColor: 'border-arkos-deep/20',
+    image: '/images/product-tincture.jpg',
+    tag: 'High Potency',
+    desc: 'Double strength for those who need more.',
   },
   {
     name: 'Sleepy Time',
     strength: '600mg + Melatonin',
     price: '$80',
+    image: '/images/product-sleep.jpg',
     tag: 'For Rest',
-    color: 'from-arkos-abyss/10 to-arkos-deep/10',
-    borderColor: 'border-arkos-abyss/15',
+    desc: 'Fall asleep faster, wake up refreshed.',
   },
   {
     name: 'Pain Relief Spray',
     strength: '300mg Topical',
     price: '$60',
+    image: '/images/product-spray.jpg',
     tag: 'Fast Acting',
-    color: 'from-arkos-light/20 to-arkos-mist/30',
-    borderColor: 'border-arkos-light/30',
+    desc: 'Targeted relief where you need it most.',
   },
   {
     name: 'Pain Relief Roller',
     strength: '250mg Roll-On',
     price: '$45',
+    image: '/images/product-roller.jpg',
     tag: 'On-the-Go',
-    color: 'from-arkos-cyan/10 to-arkos-mist/20',
-    borderColor: 'border-arkos-cyan/15',
+    desc: 'Portable relief in a convenient roll-on.',
   },
   {
     name: 'Pet Tincture',
     strength: '300mg',
     price: '$65',
+    image: '/images/product-pet.jpg',
     tag: 'For Pets',
-    color: 'from-arkos-sand/30 to-arkos-mist/20',
-    borderColor: 'border-arkos-sand/40',
+    desc: 'Because they deserve wellness too.',
   },
 ];
 
@@ -57,23 +57,17 @@ export function Products() {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.1 }
-    );
+    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setVisible(true); }, { threshold: 0.1 });
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="products" ref={ref} className="py-20 lg:py-28 bg-white">
+    <section id="products" ref={ref} className="section-padding bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-14">
-          <span className="font-body text-xs font-semibold tracking-[0.25em] uppercase text-arkos-cyan">
-            The Collection
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-arkos-abyss mt-3">
+          <span className="font-body text-xs font-semibold tracking-[0.25em] uppercase text-arkos-cyan">The Collection</span>
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-arkos-abyss mt-3">
             Find Your <span className="text-arkos-deep">Formula</span>
           </h2>
           <p className="font-body text-arkos-charcoal/60 mt-4 max-w-xl mx-auto">
@@ -81,46 +75,36 @@ export function Products() {
           </p>
         </div>
 
-        {/* Product Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {products.map((product, i) => (
             <div
-              key={product.name}
-              className={`group relative bg-gradient-to-br ${product.color} border ${product.borderColor} rounded-2xl p-6 transition-all duration-500 hover:shadow-xl hover:shadow-arkos-cyan/5 hover:-translate-y-1 cursor-pointer ${
-                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
+              key={`${product.name}-${i}`}
+              className={`group bg-white border border-arkos-light/20 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-arkos-cyan/5 hover:-translate-y-1.5 transition-all duration-500 cursor-pointer ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              {/* Tag */}
-              <span className="inline-block font-body text-[10px] font-semibold tracking-wider uppercase bg-white/80 border border-arkos-light/30 text-arkos-deep px-2.5 py-1 rounded-full mb-4">
-                {product.tag}
-              </span>
-
-              {/* Product Image Placeholder */}
-              <div className="relative h-40 flex items-center justify-center mb-5">
-                <div className="absolute w-28 h-28 rounded-full bg-arkos-cyan/5 group-hover:bg-arkos-cyan/10 transition-colors" />
-                <img
-                  src="/images/arkos-droplet.png"
-                  alt={product.name}
-                  className="relative h-20 w-auto opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
-                />
+              {/* Product Image */}
+              <div className="relative h-56 lg:h-64 overflow-hidden bg-gradient-to-br from-arkos-mist/30 to-arkos-sand/20">
+                <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span className="absolute top-3 left-3 font-body text-[10px] font-bold tracking-wider uppercase bg-white/90 backdrop-blur-sm text-arkos-deep px-2.5 py-1 rounded-full">
+                  {product.tag}
+                </span>
               </div>
 
               {/* Info */}
-              <h3 className="font-display text-lg font-semibold text-arkos-abyss group-hover:text-arkos-deep transition-colors">
-                {product.name}
-              </h3>
-              <p className="font-body text-xs text-arkos-charcoal/50 mt-1">
-                {product.strength}
-              </p>
+              <div className="p-5">
+                <h3 className="font-display text-lg font-semibold text-arkos-abyss group-hover:text-arkos-deep transition-colors">
+                  {product.name}
+                </h3>
+                <p className="font-body text-xs text-arkos-charcoal/50 mt-1">{product.strength}</p>
+                <p className="font-body text-sm text-arkos-charcoal/60 mt-2">{product.desc}</p>
 
-              <div className="flex items-center justify-between mt-5">
-                <span className="font-display text-xl font-bold text-arkos-abyss">
-                  {product.price}
-                </span>
-                <button className="font-body text-xs font-semibold bg-arkos-cyan hover:bg-arkos-deep text-white px-4 py-2 rounded-full transition-colors">
-                  Add to Cart
-                </button>
+                <div className="flex items-center justify-between mt-4">
+                  <span className="font-display text-xl font-bold text-arkos-abyss">{product.price}</span>
+                  <button className="inline-flex items-center gap-1.5 font-body text-xs font-semibold bg-arkos-cyan hover:bg-arkos-deep text-white px-4 py-2 rounded-full transition-colors">
+                    <ShoppingCart className="w-3.5 h-3.5" />
+                    Add to Cart
+                  </button>
+                </div>
               </div>
             </div>
           ))}
@@ -130,9 +114,7 @@ export function Products() {
         <div className="mt-14 text-center">
           <div className="inline-flex items-center gap-2 bg-arkos-mist/40 border border-arkos-light/30 rounded-full px-5 py-2.5">
             <Star className="w-4 h-4 text-arkos-cyan fill-arkos-cyan" />
-            <span className="font-body text-sm text-arkos-charcoal/70">
-              30-Day Money-Back Guarantee on all products
-            </span>
+            <span className="font-body text-sm text-arkos-charcoal/70">30-Day Money-Back Guarantee on all products</span>
           </div>
         </div>
       </div>
