@@ -5,7 +5,7 @@ const steps = [
   {
     num: '01',
     title: 'Mechanical Particle Reduction',
-    desc: 'Using proprietary high-shear forces, we break CBD clusters from ~2,000nm down to ~60nm — about 30x smaller than traditional oil droplets.',
+    desc: 'Using proprietary precision mechanical disruption, we break CBD clusters from ~2,000nm down to ~60nm — about 30x smaller than traditional oil droplets. No chemicals. No emulsifiers. Pure mechanical precision.',
   },
   {
     num: '02',
