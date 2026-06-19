@@ -1,9 +1,9 @@
 import { SEO, organizationSchema } from '@/components/SEO';
 import { VideoHero } from '@/sections/VideoHero';
 import { TrustBar } from '@/sections/TrustBar';
-import { ScienceExplained } from '@/sections/ScienceExplained';
+import { HomeScienceTeaser } from '@/sections/HomeScienceTeaser';
 import { Stats } from '@/sections/Stats';
-import { Process } from '@/sections/Process';
+import { Lifestyle } from '@/sections/Lifestyle';
 import { Products } from '@/sections/Products';
 import { PetSection } from '@/sections/PetSection';
 import { Testimonials } from '@/sections/Testimonials';
@@ -21,9 +21,9 @@ export function HomePage() {
       />
       <VideoHero />
       <TrustBar />
-      <ScienceExplained />
+      <HomeScienceTeaser />
       <Stats />
-      <Process />
+      <Lifestyle />
       <Products />
       <PetSection />
       <Testimonials />
