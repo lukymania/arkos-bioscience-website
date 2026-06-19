@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ShoppingCart, Star, Filter } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 
-const categories = ['All', 'Tinctures', 'Pain Relief', 'Sleep', 'Pet'];
+const categories = ['All', 'Tinctures', 'Pain Relief', 'Sleep'];
 
 const products = [
   { slug: 'nanocbd-tincture-600mg', name: 'NanoCBD Tincture', strength: '600mg', price: 65, image: '/images/product-tincture.jpg', category: 'Tinctures', tag: 'Best Seller', desc: 'Daily wellness support with maximum absorption. Water-compatible nano-CBD for 3-8x better bioavailability.', rating: 4.9, reviews: 124 },
@@ -11,7 +11,7 @@ const products = [
   { slug: 'sleepy-time', name: 'Sleepy Time', strength: '600mg + Melatonin', price: 80, image: '/images/product-sleep.jpg', category: 'Sleep', tag: 'For Rest', desc: 'Nano-CBD plus melatonin for deeper, more restorative sleep. Fall asleep faster, wake up refreshed.', rating: 4.9, reviews: 156 },
   { slug: 'pain-relief-spray', name: 'Pain Relief Spray', strength: '300mg Topical', price: 60, image: '/images/product-spray.jpg', category: 'Pain Relief', tag: 'Fast Acting', desc: 'Targeted topical relief where you need it most. Fast-absorbing nano-CBD spray for muscles and joints.', rating: 4.7, reviews: 98 },
   { slug: 'pain-relief-roller', name: 'Pain Relief Roller', strength: '250mg Roll-On', price: 45, image: '/images/product-roller.jpg', category: 'Pain Relief', tag: 'On-the-Go', desc: 'Portable roll-on relief. Keep one in your gym bag, desk drawer, or car for convenient application.', rating: 4.8, reviews: 112 },
-  { slug: 'pet-tincture', name: 'Pet Tincture', strength: '300mg', price: 65, image: '/images/product-pet.jpg', category: 'Pet', tag: 'For Pets', desc: 'Because they deserve wellness too. Same nano-technology, formulated specifically for your furry family members.', rating: 4.9, reviews: 203 },
+
 ];
 
 export function ShopPage() {
@@ -22,7 +22,7 @@ export function ShopPage() {
     <>
       <SEO
         title="Shop NanoCBD Products | Arkos Bioscience"
-        description="Shop nano-CBD tinctures, pain relief topicals, sleep formulas, and pet wellness. 3-8x better absorption. THC-free, third-party tested, made in USA."
+        description="Shop nano-CBD tinctures, pain relief topicals, and sleep formulas. 3-8x better absorption. THC-free, third-party tested, made in USA."
         pathname="/shop"
         image="/images/shop-hero.jpg"
       />

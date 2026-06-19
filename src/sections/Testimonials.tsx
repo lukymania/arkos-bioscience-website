@@ -15,9 +15,9 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: 'Amanda P.',
-    role: 'Pet Parent',
-    text: "My 12-year-old lab has been so much more comfortable since starting the pet tincture. He moves easier, seems genuinely happier, and even plays with his toys again. Thank you, Arkos.",
+    name: 'Sarah K.',
+    role: 'Sleep Support User',
+    text: "Sleepy Time has been a game changer. I used to toss and turn for hours. Now I take a dropper 30 minutes before bed and I actually fall asleep. Best part? No grogginess in the morning. Just real, restful sleep.",
     rating: 5,
   },
 ];

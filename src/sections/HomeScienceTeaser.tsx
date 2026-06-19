@@ -27,17 +27,17 @@ export function HomeScienceTeaser() {
           </p>
         </div>
 
-        {/* The Comparison Image — KEY VISUAL */}
+        {/* The Molecules at Work Image — KEY VISUAL */}
         <div className={`max-w-5xl mx-auto mb-12 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="rounded-2xl overflow-hidden shadow-xl border border-arkos-light/20">
             <img 
-              src="/images/home-science-compare.jpg" 
-              alt="Traditional CBD Oil clusters at 2,000nm are too big and bounce off cell walls. Arkos Nano-CBD at 60nm passes through and gets absorbed."
+              src="/images/home-nano-at-work.jpg" 
+              alt="Arkos Nano-CBD particles at 60nm entering human cells and being absorbed, while traditional CBD oil clusters at 2,000nm are too large to penetrate cell walls."
               className="w-full h-auto"
             />
           </div>
           <p className="font-body text-xs text-arkos-charcoal/50 text-center mt-3">
-            Traditional CBD oil clusters (left) vs. Arkos Nano-CBD particles (right) at the cellular level
+            At ~60nm, Arkos Nano-CBD particles (right) penetrate cell membranes and enter the bloodstream — traditional oil clusters (left) at ~2,000nm bounce off
           </p>
         </div>
 

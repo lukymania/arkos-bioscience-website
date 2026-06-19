@@ -5,7 +5,6 @@ import { HomeScienceTeaser } from '@/sections/HomeScienceTeaser';
 import { Stats } from '@/sections/Stats';
 import { Lifestyle } from '@/sections/Lifestyle';
 import { Products } from '@/sections/Products';
-import { PetSection } from '@/sections/PetSection';
 import { Testimonials } from '@/sections/Testimonials';
 import { Newsletter } from '@/sections/Newsletter';
 
@@ -25,7 +24,6 @@ export function HomePage() {
       <Stats />
       <Lifestyle />
       <Products />
-      <PetSection />
       <Testimonials />
       <Newsletter />
     </>
